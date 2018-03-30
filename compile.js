@@ -8,10 +8,12 @@ const fs = require('fs')
 const solc = require('solc')
 
 // build a path from here to contracts
-const inboxPath = path.resolve(__dirname, 'contracts', 'inbox.sol')
+const lotteryPath = path.resolve(__dirname, 'contracts', 'Lottery.sol')
 
 // Store content from inbox.sol here
-const source = fs.readFileSync(inboxPath, 'utf8')
+const source = fs.readFileSync(lotteryPath, 'utf8')
 
 // Compile code
-module.exports = solc.compile(source,1).contracts[':Inbox']
+
+// console.log(solc.compile(source,1).contracts[':Lottery'])
+module.exports = solc.compile(source,1).contracts[':Lottery']
